@@ -1,5 +1,6 @@
 @import "../tools/customization";
 
+
 .header {
   position: fixed;
   @include Width-Height(100%, 80px);
@@ -13,7 +14,9 @@
     box-shadow: 0 32px 100px 50px rgba(1, 24, 63, 0.35);
   }
 }
-
+.add_background{
+  background: rgba(1, 24, 63, 0.60);
+}
 .menu {
 
   &__list {
