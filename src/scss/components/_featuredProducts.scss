@@ -1,0 +1,66 @@
+@import "../tools/customization";
+
+.featured-products {
+  background: #f7f8f3;
+
+  &__content {
+    padding-top: 140px;
+  }
+
+  &__content-title {
+    @include text($size-30, $line_height-75, $oswald, $font-weight-400, $color-dark, $letter_spacing-6, uppercase);
+    text-align: center;
+  }
+
+  &__slider {
+    margin-top: 50px;
+   @include marginLeftRight(-20px, -20px);
+  }
+
+  &__slider-content {
+    @extend %flex-column;
+    border: 1px solid $color-light-gray;
+    @include marginLeftRight(20px,20px);
+    margin-bottom: 55px;
+    background: $color-white;
+  }
+
+  &__slider-ratings {
+   @extend %flex-center-row;
+    margin-top: 40px;
+  }
+  &__slider-name {
+    @include text($size-18, $line_height-75, $oswald, $font-weight-400, $color-dark, $letter_spacing-3, uppercase);
+    text-align: center;
+  }
+
+  &__slider-img {
+    display: block;
+    @extend %marginCenter;
+    height: 285px;
+  }
+
+  &__slider-info-buy {
+    border-top: 1px solid $color-light-gray;
+    display: flex;
+    padding-left: 30px;
+  }
+
+  &__slider-price {
+    @include text($size-18, $line_height-75, $oswald, $font-weight-400, $color-dark, $letter_spacing-3, uppercase);
+  }
+
+  &__slider-button-buy {
+    @include button(190px, 75px, $size-20, none, $line_height-40, $color-white, $font-weight-400, $oswald, $color-dark-green);
+    @include marginLeftRight(0,auto);
+    @extend .button-effects;
+
+    &--line {
+      display: inline-block;
+      vertical-align: middle;
+      @include button-line(50px, 1px, $color-white);
+      margin-left: 15px;
+    }
+  }
+}
+

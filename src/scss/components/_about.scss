@@ -1,0 +1,86 @@
+@import "../tools/customization";
+
+.about {
+  background: $color-mid-white;
+
+  &__inner {
+    padding-top: 90px;
+  }
+
+  &__inner-trust {
+    @extend %marginCenter;
+    margin-bottom: 90px;
+  }
+}
+
+.trust-icons {
+  @include background(url("../images/holderFon.png"), cover);
+  @include Width-Height(71%, 200px);
+  @extend %flex-center-column;
+
+  &__title {
+    @include text($size-24, $line_height-75, $oswald, $font-weight-400, $color-dark, $letter_spacing-5, uppercase);
+  }
+}
+
+.tabs {
+
+  &__item {
+    flex-direction: row;
+  }
+
+  &__item-content {
+    width: 70%;
+    padding-top: 110px;
+  }
+
+  &__item-title {
+    @include text($size-24, $line_height-40, $oswald, $font-weight-400, $color-black, $letter_spacing-5, uppercase);
+  }
+
+  &__item-text {
+    @include text($size-18, $line_height-40, $oswald, $font-weight-300, $color-green, $letter_spacing-1, none);
+    margin-top: 35px;
+  }
+
+  &__item-img {
+    width: 100%;
+    margin-top: 80px;
+    @include marginLeftRight(-200px, 200px);
+
+    div:first-child {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.tabs > input[type="radio"] {
+  display: none;
+}
+
+.tabs > input[type="radio"]:checked + label {
+  cursor: default;
+  border-bottom: 1px solid $color-dark;
+}
+
+.tabs > div {
+  display: none;
+  border-top: 1px solid $color-light-gray;
+}
+
+#tab-btn-1:checked ~ #content-1,
+#tab-btn-2:checked ~ #content-2,
+#tab-btn-3:checked ~ #content-3 {
+  display: flex;
+}
+
+.tabs > label {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  transition: color 0.15s ease-in-out;
+  cursor: pointer;
+  margin-right: 90px;
+  @include text($size-30, $line_height-75, $oswald, $font-weight-400, $color-dark, $letter_spacing-6, uppercase);
+}
+

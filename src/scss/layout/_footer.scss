@@ -1,0 +1,117 @@
+@import "../tools/customization";
+
+.footer {
+  background: $color-mid-white;
+
+  &__content {
+    @include paddingTopBottom(14%, 4.5%);
+  }
+
+  &__content-logo {
+    @include text($size-60, $line_height-60, $oswald, $font-weight-400, $color-green, none, uppercase);
+    text-align: center;
+    position: relative;
+
+    &:before {
+      @include beforeLine(31.7%, 2px, $color-green, 50%, -150%);
+    }
+
+    &:after {
+      @include beforeLine(31.7%, 2px, $color-green, 50%, 50%);
+    }
+  }
+
+  &__content-info {
+    @extend %flex-row;
+    margin-top: 4.3%;
+  }
+
+  &__content-info-list {
+    width: 30%;
+  }
+
+  &__content-social-list {
+    width: 40%;
+    @extend %flex-center-row;
+    position: relative;
+
+    &:before {
+      @include beforeLine(2px, 55px, $color-green, 50%, -50%);
+    }
+
+  }
+
+  &__content-item {
+    @include text($size-14, $line_height-40, $oswald, $font-weight-300, $color-green, $letter_spacing-4, uppercase);
+    text-align: center;
+  }
+
+  &__content-form-description {
+    @include text($size-18, $line_height-75, $oswald, $font-weight-400, $color-dark, $letter_spacing-3, uppercase);
+    text-align: center;
+  }
+
+  &__content-copywriter {
+    @include text($size-11, $line_height-40, $oswald, $font-weight-300, $color-green, $letter_spacing-3, uppercase);
+    text-align: center;
+    margin-top: 4.3%;
+  }
+}
+
+.subscribe {
+  @include Width-Height(31.7%, 60px);
+  border: 2px solid $color-light-gray;
+  position: relative;
+  @extend %marginCenter;
+  @extend %flex-row;
+
+  &:before {
+    @include beforeLine(1px, 90%, $color-light-gray, 5%, 0%);
+    left: 74%;
+  }
+
+  &__email {
+    @include Width-Height(74%, 100%);
+    background: transparent;
+    @include text($size-16, $line_height-75, $oswald, $font-weight-300, $color-green, $letter_spacing-4, none);
+    padding-left: 30px;
+  }
+
+  &__button {
+    @include Width-Height(75px, 100%);
+    vertical-align: middle;
+    background: transparent;
+    @extend .button-effects;
+
+    &:before {
+      content: url("../images/Right.svg");
+      @include Width-Height(25px, 13px);
+    }
+
+  }
+}
+
+.item-facebook {
+  &:before {
+    @include icon-style($awesome, $size-20, $font-weight-600, $color-dark-green);
+    content: '\f39e';
+    margin-right: 60px;
+  }
+}
+
+.item-twitter {
+  &:before {
+    @include icon-style($awesome, $size-20, $font-weight-600, $color-dark-green);
+    content: '\f099';
+    margin-right: 60px;
+  }
+
+}
+
+.item-youtube {
+  &:before {
+    @include icon-style($awesome, $size-20, $font-weight-600, $color-dark-green);
+    content: '\f167';
+  }
+
+}

@@ -1,0 +1,21 @@
+@import "../tools/customization";
+
+.featuredProducts__arrows{
+  @include Width-Height(170px, 60px);
+  @extend %marginCenter;
+  @extend %flex-row-reverse;
+
+}
+.featuredProducts__arrows-wrapper{
+  @include Width-Height(50%, 100%);
+
+}
+.arrow-wrapper {
+  @include Width-Height(50%, 100%);
+  border-right: 1px solid $color-mid-white;
+  @extend %flex-center;
+
+  img {
+    @include Width-Height(45px, 20px);
+  }
+}

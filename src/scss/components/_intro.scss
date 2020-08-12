@@ -1,0 +1,105 @@
+@import "../tools/customization";
+
+.intro {
+     @include background(url("../images/introFon.png"),cover );
+     min-height: 100vh;
+
+     &__inner {
+       text-align: right;
+       @include paddingTopBottom(32.5%, 7.5%);
+       position: relative;
+     }
+
+  &__title {
+    @include text($size-55, $line_height-75, $oswald, $font-weight-400, $color-mid-white, $letter_spacing-15, uppercase);
+  }
+
+  &__description {
+    @include text($size-24, $line_height-75, $oswald, $font-weight-300, $color-mid-white, $letter_spacing-7, none);
+  }
+
+  &__button {
+    @include button(270px, 70px, $size-20, none, $line_height-40, $color-white, $font-weight-400, $oswald, none,);
+    border: 1px solid $color-light-green;
+    margin-top: 25px;
+    @extend .button-effects;
+    &:hover{
+      border: 1px solid $color-dark-green;
+    }
+
+    &--line {
+      display: inline-block;
+      vertical-align: middle;
+      @include button-line(50px, 1px, $color-white);
+      margin-left: 15px;
+    }
+  }
+
+  &__link {
+    display: block;
+    @include text($size-18, $line_height-75, $oswald, $font-weight-300, $color-mid-white, $letter_spacing-5, none);
+    margin-bottom: 215px;
+
+    &:after {
+      content: url("../images/arrow.svg");
+      margin-left: 15px;
+      animation: animate 2s linear infinite;
+      animation-delay: -0.2s;
+    }
+
+    &:hover {
+      color: $color-dark-green;
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    left: 50%;
+    @include Width-Height(15px, 15px);
+    transform: translateY(10px) translateX(-50%) rotate(45deg);
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      @include Width-Height(100%, 100%);
+      border-bottom: 2px solid $color_white;
+      border-right: 2px solid $color_white;
+      animation: animate-scroll 1.5s linear infinite;
+      opacity: 0;
+    }
+
+    span:nth-child(1) {
+      transform: translate(-10px, -10px);
+      animation-delay: -0.4s;
+    }
+
+    span:nth-child(2) {
+      transform: translate(0px, 0px);
+      animation-delay: -0.2s;
+    }
+
+    span:nth-child(3) {
+      transform: translate(10px, 10px);
+      animation-delay: 0s;
+    }
+
+  }
+
+  &__decor {
+    @include text($size-26, $line_height-55, $oswald, $font-weight-400, $color-white, $letter_spacing-2, uppercase);
+    @include rotate(-90deg);
+    position: absolute;
+    left: -35%;
+    bottom: 240px;
+
+    &:before {
+      content: '';
+      @include Width-Height(100px, 2px);
+      background: $color-mid-white;
+      @include absoluteTop(50%, -150%);
+    }
+  }
+}
+

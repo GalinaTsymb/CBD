@@ -1,0 +1,48 @@
+@import "../tools/customization";
+
+.header {
+  position: fixed;
+  @include Width-Height(100%, 80px);
+  background: rgba(1, 24, 63, 0.35);
+  z-index: 20;
+
+  &__inner {
+    height: 100%;
+    @extend %flex-between-row;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 32px 100px 50px rgba(1, 24, 63, 0.35);
+  }
+}
+
+.menu {
+
+  &__list {
+    @extend %flex-row;
+  }
+
+  &__list:first-child {
+    margin-left: 15px;
+  }
+
+  &__list-item {
+    margin-left: 40px;
+  }
+
+  &__list-link {
+    @include text($size-16, $line_height-40, $oswald, $font-weight-400, $color-white, $letter_spacing-1, uppercase);
+    position: relative;
+    display: block;
+    padding: 5px;
+
+    &:hover:before {
+      content: '';
+      @include Width-Height(100%, 1px);
+      background: $color-light-green;
+      @extend %centerAbsoluteXY;
+    }
+  }
+}
+
+.logo {
+  @include text($size-30, $line_height-55, $oswald, $font-weight-400, $color-white, none, uppercase);
+}

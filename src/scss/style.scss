@@ -1,0 +1,81 @@
+
+@import "../fonts/font_awesome/all.min.css";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+@import "layout/mobile-menu";
+@import "layout/footer";
+@import "components/testimonials";
+@import "components/frequentlyQuestion";
+@import "components/featuredProducts";
+@import "components/about";
+@import "components/intro";
+@import "layout/header";
+
+@import "layout/container";
+@import "base/button";
+@import "vendors/slider-slick";
+@import "layout/@media";
+
+* {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+ul li{
+  list-style-type: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+ul{
+  list-style: none;
+
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+input {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+  border: none;
+}
+a{
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+
+}
+a:active,
+a:hover,
+{
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+button, input [type='submit']{
+  outline: none;
+  border-style: none;
+  border-width: 0;
+  padding: 0;
+  border-color: transparent;
+}

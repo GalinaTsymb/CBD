@@ -1,0 +1,69 @@
+@import "../tools/customization";
+
+.testimonials {
+  @include background((linear-gradient(rgba(27, 31, 10, 0.6), rgba(27, 31, 10, 0.6)), url("../images/testim1.png")), cover);
+  position: relative;
+  @include Width-Height(100%, auto);
+
+  &:before {
+    content: '';
+    @include Width-Height(100%, 100%);
+    background: rgba(27, 31, 10, 0.6);
+  }
+
+  &__content {
+    padding-top: 13.7%;
+    text-align: center;
+  }
+
+  &__slider-ratings {
+    @extend %flex-center-row;
+  }
+
+  &__slider-star {
+    &:before {
+      content: url("../images/star.svg");
+    }
+  }
+
+  &__slider-text {
+    margin-top: 20px;
+    @include text($size-22, $line_height-40, $oswald, $font-weight-300, $color-white, $letter_spacing-4, none);
+
+  }
+
+  &__slider-author {
+    @include text($size-24, $line_height-75, $oswald, $font-weight-400, $color-white, $letter_spacing-5, uppercase);
+    position: relative;
+
+    &:before {
+      content: '';
+      @include button-line(50px, 1px, $color-white);
+      position: absolute;
+      top: 50%;
+      right: 55%;
+    }
+  }
+
+  &__arrows {
+    @include Width-Height(260px, 95px);
+    border: 1px solid $color-mid-white;
+    @extend %marginCenter;
+    @extend %flex-row-reverse;
+    margin-top: 11%;
+
+  }
+
+  &__decor {
+    @include text($size-24, $line_height-60, $oswald, $font-weight-300, $color-mid-white, $letter_spacing-7, uppercase);
+    @include rotate(90deg);
+    position: absolute;
+    bottom: 15%;
+    left: -2%
+  }
+}
+
+
+
+
+

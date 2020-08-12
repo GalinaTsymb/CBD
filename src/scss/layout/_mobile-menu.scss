@@ -1,0 +1,154 @@
+@import "../tools/customization";
+
+
+.mobile-menu {
+  overflow: hidden;
+  &__button {
+    position: fixed;
+    @include Width-Height(100%,80px );
+    background: rgba(27, 31, 10, 0.6);
+    display: none;
+    @extend %row-center;
+    box-shadow: 0 32px 100px 50px rgba(1, 24, 63, 0.35);
+    z-index: 100;
+  }
+
+  &__toggle {
+    display: none;
+    position:absolute;
+    z-index:101;
+    right:15px;
+    top:15px;
+    cursor:pointer;
+    border-radius:50%;
+    transition:background-color .15s linear;
+
+    &:hover,
+    &:focus {
+      background-color:rgba(0,0,0,.5);
+    }
+  }
+
+  &__menu {
+    display: none;
+    flex-direction:column;
+    position:absolute;
+    z-index:5;
+    visibility:hidden;
+
+  }
+
+  &__item {
+    opacity:0;
+    transition: all .3s cubic-bezier(0.000, 0.995, 0.990, 1.000) .3s;
+  }
+  @for $i from 1 through 5 {
+    &__item:nth-child(#{$i}){
+      transform:translateY(-40px * $i);
+    }
+  }
+
+  &__link {
+    @include text($size-16,$line_height-20, $oswald, $font-weight-400, $color-white, $letter_spacing-5, uppercase);
+    display:none;
+    padding:1rem;
+
+    &:hover,
+    &:focus {
+      outline:0;
+      background-color:rgba(0,0,0,0.2);
+    }
+  }
+}
+.menuicon {
+  display:block;
+  cursor:pointer;
+  color: white;
+  transform:rotate(0deg);
+  transition: .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+
+  &__bar,
+  &__circle {
+    fill:none;
+    stroke: currentColor;
+    stroke-width:3;
+    stroke-linecap:round;
+  }
+  &__bar {
+    transform: rotate(0deg);
+    transform-origin:50% 50%;
+    transition: transform .25s ease-in-out;
+  }
+  &__circle {
+    transition: stroke-dashoffset .3s linear .1s;
+    stroke-dashoffset:circumference(23);
+    stroke-dasharray:circumference(23);
+  }
+}
+
+.splash {
+  position:absolute;
+  top:40px;
+  right:40px;
+  @include Width-Height(1px, 1px);
+
+  &::after {
+    content:"";
+    display:block;
+    position:absolute;
+    border-radius:50%;
+    background-color:rgba(27, 31, 10, 0.9);
+    @include Width-Height(130vmax,200vmax );
+    top:-140vmax;
+    left:-170vmax;
+    transform: scale(0);
+    transform-origin:50% 50%;
+    transition: transform .3s cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    will-change:transform;
+    z-index: 1;
+  }
+}
+.nav:target,
+.nav--open {
+  > .splash::after {
+    transform:scale(1);
+  }
+  .menuicon {
+    color:white;
+    transform:rotate(180deg);
+
+    &__circle {
+      stroke-dashoffset:0;
+    }
+    &__bar:nth-child(1),
+    &__bar:nth-child(4) {
+      opacity:0;
+    }
+    &__bar:nth-child(2) {
+      transform: rotate(45deg);
+    }
+    &__bar:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+  }
+
+
+  .mobile-menu {
+    &__menu {
+      visibility:visible;
+      margin-top: 12%;
+    }
+
+    &__item {
+      opacity:1;
+      transform:translateY(0);
+    }
+    &__link{
+      display:block;
+    }
+  }
+}
+
+
+
+

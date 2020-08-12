@@ -1,0 +1,17 @@
+.container {
+  display: grid;
+  grid-template-columns: 4.78fr repeat(12, 1fr) 4.78fr;
+  grid-gap: 30px;
+}
+.col_1-14{
+  grid-column: 1/15;
+}
+.col_2-12{
+  grid-column: 2/14;
+}
+.col_3_13{
+  grid-column: 3/13;
+}
+.col_5_11{
+  grid-column: 5/11;
+}

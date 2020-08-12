@@ -1,0 +1,52 @@
+@import "../tools/customization";
+
+.frequently-question {
+  background: $color-mid-white;
+
+  &__content {
+    padding-bottom: 150px;
+  }
+
+  &__title {
+    @include text($size-30, $line_height-75, $oswald, $font-weight-400, $color-dark, $letter_spacing-6, uppercase);
+    text-align: center;
+  }
+
+  &__list {
+    margin-top: 30px;
+  }
+
+  &__item {
+    border-top: 1px solid $color-light-white;
+
+    input {
+      display: none;
+    }
+  }
+  & div:last-child{
+    border-bottom: 1px solid $color-light-white;
+  }
+
+
+  &__item-question {
+    @include text($size-18, $line_height-75, $oswald, $font-weight-300, $color-green, $letter_spacing-5, none);
+
+    &:before {
+      content: url("../images/icon.svg");
+      margin-right: 20px;
+    }
+  }
+
+  &__item-answer {
+    display: none;
+    @include text($size-18, $line_height-40, $oswald, $font-weight-300, $color-black, $letter_spacing-1, none);
+  }
+}
+
+#question_1:checked ~ .question_1,
+#question_2:checked ~ .question_2,
+#question_3:checked ~ .question_3,
+#question_4:checked ~ .question_4 {
+  display: block;
+  padding-bottom: 50px;
+}
